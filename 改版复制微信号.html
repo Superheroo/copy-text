@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="http://img26.gz-lodihair.com/lyc.superheroo.com/css/bootstrap.css">
+    <link rel="stylesheet" href="http://img26.gz-lodihair.com/lyc.superheroo.com/css/swiper.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            position: relative
+        }
+
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+        .swiper-slide>img {
+            width: 100%;
+            height: 100%;
+        }
+        .all_box {
+            margin: 0 auto;
+            /* text-align: center; */
+            background-color: white;
+        }
+
+        .title {
+            margin: 0 auto;
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+        .img_box {
+            text-align: center;
+            width: c(500px);
+            height: c(500px);
+        }
+
+        .center {
+            text-align: center
+        }
+
+        .img_box>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .red_btn {
+            color: white;
+            font-weight: bold;
+            background-color: red;
+            font-size: 20px;
+            text-align: center;
+            height: 50px;
+            margin-top: 30px;
+            margin-bottom: 44px;
+            line-height: 50px;
+            /* margin: 30px 15px 0 */
+        }
+
+        .section {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .red_font {
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .yellow_title {
+            background-color: rgb(255, 251, 0);
+            color: red;
+            font-weight: bold;
+            font-size: 23px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .black_title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 20px
+        }
+
+        .bold_title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .douhao {
+            padding: 60px 0;
+        }
+
+        .douhao::before {
+            content: '"';
+            font-size: 80px;
+            color: rgb(192, 200, 209);
+            position: absolute;
+            top: -10px;
+            left: 20%;
+        }
+
+        .douhao::after {
+            content: '"';
+            font-size: 80px;
+            color: rgb(192, 200, 209);
+            position: absolute;
+            bottom: -50px;
+            right: 20%;
+        }
+
+        .bold_section {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* 正三角形 */
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-bottom: 20px solid black;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+
+
+        .popup {
+            width: 300px;
+            height: 400px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+            display: none
+        }
+
+        .none,
+        .go_wecheck {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+        }
+
+        .wechat_box {
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            border-radius: 50px
+        }
+
+        .wechat_box img {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .popup {
+            width: 240px;
+            font-size: 90%;
+            padding: 10px;
+            position: fixed;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+
+        .find_wechat {
+            font-family: "Microsoft YaHei", "微软雅黑", Heiti, "黑体", Arial, Helvetica, STHeiTi, sans-serif;
+            width: 87%;
+            font-size: 16px;
+            line-height: 2;
+            margin: 0 auto;
+            padding: 1.8em 0;
+            letter-spacing: .1em;
+        }
+        .popup>ul>li{
+            list-style: none;
+            float: left;
+            width: 50%
+        }
+        .popup>ul>li:first-child>a {
+            display: block;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #CCCCCC;
+            color: #CCCCCC;
+            border-radius: 50px;
+            text-decoration: none;
+        }
+
+        .popup>ul>li:last-child>a {
+            display: block;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #00D48C;
+            color: #00D48C;
+            border-radius: 50px;
+            float: left;
+        }
+        .cancel:hover , .go_wechat:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid all_box">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 center">
+            <h3 class="title">【虔参堂辽参，坚守野生品质15年】</h3>
+            <h3 class="title">野生纯淡干刺参，敢与任何一家比质量</h3>
+            <h3 class="title">源自天然·贵在品质·传统工艺·真材实料</h3>
+        </div>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/1.jpg" />
+        </div>
+        <div class="col-md-4 col-md-offset-4 red_btn">参品即人品，品质永不</div>
+        <p class="col-md-4 col-md-offset-4 section">我是土生土长大连海岛渔女，90后妹子。祖祖辈辈靠大海为生，父亲传承祖辈的捕参经验，自己捕捞自己晒，常年在家乡买真真正正的纯野生淡干海参</p>
+        <p class="col-md-4 col-md-offset-4 section">但这些年来，很多不法商家以次充好，不懂行的顾客花高价买糖干货、盐干货甚至是其他添加剂的海参，受骗而不自知，这深深触动了我。</p>
+        <p class="col-md-4 col-md-offset-4 section">毕业后，我放弃了白领工作，继承父亲的生意，并立志要将其发扬光大，
+            <span class="red_font">我想让需要海参的人都能买到高品质的海参，想让更多的人都认识家乡真正的大连海参</span>
+        </p>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/2.jpg" />
+        </div>
+        <p class="col-md-4 col-md-offset-4 section">父亲有个相识多年的好友，之前一直是父亲海参生意的常客，非常了解我们家的海参品质，也看好我们的海参前景，知道我有继承父亲的生意的想法后，便来和我详聊一番。</p>
+        <p class="col-md-4 col-md-offset-4 section">最后，我们成立了“虔参堂”，和家乡当地专业捕捞团队捕捞海参以及加工等，我日常主要通过微信推广我们自捕自销的一手海参，回馈客户。</p>
+        <p class="col-md-4 col-md-offset-4 section">但是我们并不是大家所常到的那种小户作坊，品质毫无保障，
+            <span class="red_font">我们的海参可溯源，因为从捕捞到发货的整个过程，我们形成标准化加工及规范化管理，真正把产品质量落实到每一个环节。</span>
+        </p>
+        <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-8 col-xs-offset-2 yellow_title">↓实证拍摄,盗图必究↓</div>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/3.png" />
+        </div>
+        <div class="col-md-4 col-md-offset-4 red_btn">辽参极品看大连</div>
+        <p class="col-md-4 col-md-offset-4 section">在海参行业流传着这样一句话：
+            <span class="red_font">“参中上品数辽参，辽参极品看大连”。</span>没错，长海独特的海域优势哺育了上乘的海参佳品。</p>
+        <p class="col-md-4 col-md-offset-4 black_title">海域水质最直接决定海参品质</p>
+
+        <p class="col-md-4 col-md-offset-4 section">水质越好，海参品质就越好 。长海县地处北纬38°55′至39°35′之间，海岸线近1000华里，海域纯净，蜿蜒曲折，西太平洋洋流长驱直入，与黄渤海沿岸流碰撞交汇，海域形成强大的气旋流和动力场，
+            <span class="red_font">海域半年换一次海水，优于其它海域的17年才换一次。</span>
+        </p>
+        <p class="col-md-4 col-md-offset-4 black_title">海域水温直接决定海参品质</p>
+        <p class="col-md-4 col-md-offset-4 section">水温的高低，影响海参的夏眠，从而影响海参的品质。当水温高于20℃，海参就会休眠，这一睡就是三四个月，俗称夏眠。
+            <span class="red_font">常年的冰冷海水加上夏眠，这样的慢生长确保了大连海参的绝佳品质，</span>也让长海海域成为了公认的优质海参产地。</p>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/4.jpg" />
+        </div>
+        <div class="col-md-4 col-md-offset-4 section center douhao">
+            <p>我家在大连做海参已十多年，</p>
+            <p> 想买一手大连纯淡干海参的朋友，</p>
+            <span class="bold_title">欢迎加我微信：</span>
+            <span class="yellow_title">cx8x81297</span>
+            <span class="bold_title">（长按可复制）</span>
+        </div>
+
+        <p class="col-md-4 col-md-offset-4 section">在大连长海县，在这个地处北纬38°55′至39°35′之间的黄金生态海域里，虔参堂未曾饲养过一只海参，从海洋到餐桌，我们只是海洋的狩猎者。</p>
+        <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-9 col-xs-offset-2 yellow_title">虔参堂海参捕捞全过程：</div>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/5.jpg" />
+        </div>
+        <p class="col-md-4 col-md-offset-4 bold_section">
+            <span class="triangle"></span>捕捞：深海不比陆地，每一只海参都是躲藏能手，要历经千辛万苦，方能捕捞到。每一次出海，都是生命的一次冒险。</p>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/6.jpg" />
+        </div>
+        <p class="col-md-4 col-md-offset-4 bold_section">
+            <span class="triangle"></span>收获： 真正野生捕捞上来，不仅仅只有海参，还会有海螺，海胆，扇贝等海底常见海鲜，如果您看到谁家捕捞上来全都是海参，百分百是养殖的。</p>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/7.jpg" />
+        </div>
+        <p class="col-md-4 col-md-offset-4 bold_section">
+            <span class="triangle"></span>分拣： 精心挑选“参胖子”，不足龄海参放回海里继续生长， 确保每一只都满分营养。</p>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/8.jpg" />
+        </div>
+        <p class="col-md-4 col-md-offset-4 bold_section">
+            <span class="triangle"></span>煮晒：海参上岸后会自溶，所以不管捕捞环境多恶劣，清理内脏多繁琐，我们都会在两小时内处理，然后煮制，晾晒。</p>
+        <div class="col-md-4 col-md-offset-4 red_btn">海参的超高营养价值你知道吗？</div>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/9.jpg" />
+        </div>
+        <p class="col-md-4 col-md-offset-4 section">海参营养价值超高，被誉为女人的
+            <span class="bold_section">“美容院”</span>，男人的
+            <span class="bold_section">“加油站”</span>，小孩的
+            <span class="bold_section">“聪明屋”</span>以及老人的
+            <span class="bold_section">“健身房”</span>。</p>
+        <div class="col-md-4 col-md-offset-4 img_box">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/10.jpg" />
+        </div>
+        <p class="col-md-4 col-md-offset-4 section">为了让大家进一步了解食用海参的好处，现根据现代人的健康需求，为大家分十个层次详细讲解海参的作用，让想用海参滋补身体的大家一目了然：</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">1、健脑、益智、长寿之神</p>
+        <p class="col-md-4 col-md-offset-4 section">海参含有50多种天然营养成份，其中酸性粘多糖和软骨素具有延缓衰老的特效；锰、牛磺酸等都对人体延缓衰老有独特的功能。因此，海参又称为
+            <span class="bold_section">“长寿之神”</span>。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">2、海参补肾益精，被称之为“海洋伟哥”</p>
+        <p class="col-md-4 col-md-offset-4 section">《本草从新》记载，海刺参
+            <span class="bold_section">“补肾益精，壮阳疗痿”</span>。海参中的精氨酸是构成男性精子细胞的主要成分，且具有调节性激素的功能，而海参又恰恰是
+            <span class="bold_section">“精氨酸的大富翁”</span>，对缓解阳痿、肾虚有特殊功效，所以海参有
+            <span class="bold_section">“海洋伟哥”</span>之称，海参还有一个与时俱进的名字
+            <span class="bold_section">“生命的保鲜剂”</span>。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">3、改善失眠 提高记忆力</p>
+        <p class="col-md-4 col-md-offset-4 section">
+            海参中含有的精氨酸及胶原蛋白对神经衰弱，改善睡眠有特殊的功效，另外，海参中的烟酸、钙、牛磺酸、赖氨酸等元素对消除大脑疲劳，增强记忆力也有重要的功效。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">4、抑制血栓的形成</p>
+        <p class="col-md-4 col-md-offset-4 section">海参体内含有“自溶酶”，如果海参离开海水，会在自溶酶的酶解作用下，短时间内溶解的无影无踪，这种物质可以抑制血栓的形成，
+            <span class="bold_title">用来缓解脑梗、心梗等，还可预防脑梗塞等血栓性疾病的复发。</span>
+        </p>
+        <p class="col-md-4 col-md-offset-4 section red_font">5、降三高</p>
+        <p class="col-md-4 col-md-offset-4 section">海参可以疏通血管，有效防止高血脂、预防动脉硬化和心脑血管疾病，而且可以起到间接降血压的作用。海参中含有的钒、锰、钾、铜、尼克酸、牛磺酸等可以影响体内脂肪的代谢过程，具有防止脂肪肝形成的作用。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">6、调节血糖</p>
+        <p class="col-md-4 col-md-offset-4 section">海参中的酸性粘多糖具有在机体中降低血糖活性，抑制糖尿病发生的作用。而它所含有的钾对机体中胰岛素的分泌起着重要作用，含有的钒可使糖尿病得到防治。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">7、促进生长发育</p>
+        <p class="col-md-4 col-md-offset-4 section">
+            <span class="bold_title">海参还具有惊人的修复再生能力，</span>当遇到强敌时，它会把内脏排出体外迷惑敌人，自己溜之大吉，不久之后会再长出新的内脏，所以食用海参可以促进生长发育、免疫调解、伤口愈合、生殖发育等生理活动。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">8、海参还是抗癌灵丹</p>
+        <p class="col-md-4 col-md-offset-4 section">海参毒素又称海参皂甙，是一种抗毒剂，能抑制某些癌细胞的生长。同时具有很强的抗细菌作用。海参中所含的硒，能抑制癌细胞及血管的生长，具有明显的抗癌作用。海参对抗癌有明显疗效，对恶性肿瘤的生长、转移具有显著抑制作用，被称为
+            <span class="bold_title">“抗癌灵丹”</span>。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">9、手术患者的最佳补品</p>
+        <p class="col-md-4 col-md-offset-4 section">将海参切成两段投进海里，经过3-8个月，每段海参又会生长一个完整的海参，有专家曾做过对比实验，两个病情相近，年龄和体重相差无几的手术患者，每天食用一只海参的患者会比另一患者提前20天左右全面康复。因此食用海参能补血恢复元气，并能明显缩短康复时间，故海参被称为
+            <span class="bold_title">“百补之首”</span>和
+            <span class="bold_title">“补血之神”</span>。</p>
+        <p class="col-md-4 col-md-offset-4 section red_font">10、海参更是美容食品</p>
+        <p class="col-md-4 col-md-offset-4 section">海参体壁内有含量很高的胶原蛋白，这种蛋白可以与传统中药的阿胶、龟板胶、鹿胶在营养成分上相媲美，其功能是生血养血。使肌肤保持光滑及富有弹性，
+            <span class="bold_title">延缓机体衰老。</span>
+        </p>
+        <div class="col-md-4 col-md-offset-4 red_btn">海参行业乱象丛生</div>
+        <div class="col-md-4 col-md-offset-4 col-sm-2 col-sm-offset-5 col-xs-9 col-xs-offset-2 yellow_title">1.添加糖或盐增重，谋取暴利！</div>
+        <div class="col-md-4 col-md-offset-4 col-sm-2 col-sm-offset-5 col-xs-9 col-xs-offset-2 yellow_title">2.添加火碱，提高泡发率和光泽!</div>
+        <div class="col-md-4 col-md-offset-4 col-sm-2 col-sm-offset-5 col-xs-9 col-xs-offset-2 yellow_title">3.加福尔马林防腐，延长保质期！</div>
+        <div class="col-md-4 col-md-offset-4 col-sm-2 col-sm-offset-5 col-xs-9 col-xs-offset-2">
+            <div class="yellow_title">4.拿南方参当北方参，高价出售！</div>
+        </div>
+        <div class="wechat_box copy data-clipboard-action="copy" data-clipboard-target="#target"
+        id="copy_btn"">
+            <img src="http://img26.gz-lodihair.com/lyc.superheroo.com/images/wechatGit.gif" alt="">
+        </div>
+        <div class="popup">
+            <h4>微信号：
+                <span  id="target" style="background-color: #ffffff;color: red">13710470300</span>
+                复制成功
+            </h4>
+            <p class="find_wechat">您已经成功复制微信号，请打开微信，点击右上角 "
+                <span style="color:red;font-size:30px">+</span>
+                " 粘贴微信号，搜索添加好友！
+            </p>
+            <ul>
+                <li class="cancel">
+                    <a>取消</a>
+                </li>
+                <li class="go_wechat">
+                    <a  href="weixin://">好的</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 col-md-offset-4" id="target">13710470300</div>
+        <button class="btn col-md-4 col-md-offset-4 col-sm-2 col-sm-offset-5" data-clipboard-action="copy" data-clipboard-target="#target"
+            id="copy_btn">
+            <a class="copy" href="weixin://">复制按钮</a>
+        </button>
+    </div>
+    <script src="http://img26.gz-lodihair.com/lyc.superheroo.com/js/swiper.js"></script>
+    <script src="http://img26.gz-lodihair.com/lyc.superheroo.com/js/jquery-2.1.0.js"></script>
+    <script src="http://img26.gz-lodihair.com/lyc.superheroo.com/js/bootstrap.js"></script>
+    <script src="http://img26.gz-lodihair.com/lyc.superheroo.com/js/clipboard.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var targetText = $("#target").text();
+            var clipboard = new ClipboardJS('#copy_btn');
+            clipboard.on('success', function (e) {
+                e.clearSelection();
+            });
+        });
+        var timer = 0;
+        var id;
+        var url = window.location.href;
+        var num = 1;
+        $('body').on('click', '.copy', function () {//开始触发事件
+            longPress();
+        })
+        function longPress() {
+            timer = 0;
+            if (num == 1) {
+                num = 0;
+                ajax()
+                console.log('已复制')
+            }
+        }
+        window.onload = function () {
+            var that = this;
+            browser();
+        }
+        function browser() {
+            var b_version = navigator.appVersion;
+            var userAgent = navigator.userAgent;
+            var isOpera = userAgent.indexOf('Opera') > -1;
+            if (isOpera) {//是否为Opera浏览器
+                return "Opera"
+            }
+            if (userAgent.indexOf('Firefox') > -1) {//是否为Firefox浏览器
+                return "Firefox"
+            }
+            if (userAgent.indexOf('Chrome') > -1) {//是否为Chrome浏览器
+                return "Chrome"
+            }
+            if (userAgent.indexOf('Safari') > -1) {//是否为Safari浏览器
+                return "Safari"
+            }
+            if (userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1 && !isOpera) {
+                return "IE"
+            }
+            if (userAgent.indexOf('Trident') > -1) {
+                return "Edge";
+            }
+            if (userAgent.indexOf('UCBrower' > -1)) {
+                return "uc"
+
+            }
+
+        }
+
+        function GetQueryString(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        }
+        function ajax() {
+            $.ajax({
+                url: 'https://click.wotaigroup.com/api/CopyData/PostCopyData',
+                type: 'POST',
+                data: {
+                    "Id": 0,                                      //不要改
+                    "AdUrl": url,                                 //不要改
+                    "CopyMessage": "qx8x80694",                   //不要改
+                    "AdId": "8001",                   //不要改
+                    "SourceURL": url,                          //不要改
+                    "SourceRegion": "",                           //不要改
+                    "ip": "",                                     //不要改
+                    "CreateTime": "",                             //不要改
+                    "GroupCode": "00020005",                      //海参项目Code,不要改
+                    "Browser": browser(),                         //可以写自己的识别逻辑
+                    "Source": "百度",                    //来源
+                    "Keyword": GetQueryString("Keyword"),                   //关键字
+                    "Type": "长按"                       //动作类型
+                },
+                success: function () {
+                    num = 0;
+                }
+            })
+
+        }
+
+        $('.wechat_box').on('click', function () {
+            $('.popup').css('display', 'block');
+        })
+        $('.cancel').on('click',function(){
+            $('.popup').css('display','none')
+        })
+    </script>
+</body>
+
+</html>
